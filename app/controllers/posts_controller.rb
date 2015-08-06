@@ -9,8 +9,14 @@ class PostsController < ApplicationController
   end
 
   def destroy
-  	Post.destroy(params[:id])
-  	redirect_to posts_path
+    post = Post.find_by_id(params[:id])
+
+    if current_user && current_user[:id] == post[:user_id]
+  	  Post.destroy(params[:id])
+      redirect_to posts_path
+    else
+      redirect_to posts_path
+    end
   end
 
   def create
@@ -33,9 +39,11 @@ class PostsController < ApplicationController
   end
 
   def update
-  	p "test: #{post_params[:title]}"
-  	@post = Post.find(params[:id])
-  	@post.update_attributes(post_params)
+    post = Post.find_by_id(params[:id])
+    if current_user && current_user[:id] == post[:user_id]
+  	   @post = Post.find(params[:id])
+  	   @post.update_attributes(post_params)
+    end
   	redirect_to posts_path
   end
 

@@ -5,9 +5,11 @@
 	<% @allPosts.each do |post| %>
 		<h2>Title: <%= post.title %></h2>
 		<p>Content: <%= post.content %></p>
-		<a href='/posts/<%= post.id %>'>View Post</a> |
-		<a href='/posts/delete/<%= post.id %>' data-confirm="Are you sure?">Delete</a> |
+		<a href='/posts/<%= post.id %>'>View Post</a>
+		<% if current_user && current_user[:id] == post.user_id %>
+		 | <a href='/posts/delete/<%= post.id %>' data-confirm="Are you sure?">Delete</a> |
 		<a href='/posts/<%= post.id %>/edit'>Edit</a>
+		<% end %>
 		<hr>
 	<% end %>
 </div>
