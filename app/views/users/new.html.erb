@@ -1,0 +1,20 @@
+<%= render 'navbar' %>
+
+<div class='container'>
+	<h1 class='text-center'>Sign Up!</h1>
+	<p class='text-center'>Who knows why you'd want to do this?</p>
+	<hr>
+
+	<div class='col-md-6 col-md-offset-3'>
+
+		<%= form_for @user, html: {class: "form-group"} do |f| %>
+		  <%= f.label :email %>:
+		  <%= f.text_field :email, class: "form-control", placeholder: "Add email here...", :autofocus=>true%><br />
+
+		  <%= f.label :password %>:
+		  <%= f.text_field :password, class: "form-control", placeholder: "Add password here...", type: "password" %><br />
+
+		  <%= f.submit class: 'btn btn-primary'%>
+		<% end %>
+	</div>
+</div>

@@ -17,18 +17,10 @@
 	      <ul class="nav navbar-nav">
 	      </ul>
 	      <ul class="nav navbar-nav">
-	      	<li><a><% if current_user %>Welcome! <%= current_user[:email] %><% end %></a></li>
-	      	<% if !current_user %>
-	      	<li><a href="/users/new">Sign Up</a></li>
-	      	<li><a href="/login">Login</a></li>
-	      	<% end %>
-	      	<li><a href="/posts/new">Make a new post</a></li>
+	        <li><a href="/posts/new">Make a new post</a></li>
 	        <li><a href='/posts'>View Posts</a></li>
-	      	<% if current_user %>
-	        <li><a href='/logout'>Logout</a></li>
-			<% end %>
 	      </ul>
 	    </div><!-- /.navbar-collapse -->
 	</div>
-  </div>
+  </div><!-- /.container-fluid -->
 </nav>
