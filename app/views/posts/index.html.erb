@@ -1,5 +1,16 @@
+<%= render 'navbar' %>
+
 <div class='container'>
-	<h1>Welcome to the blog!</h1>
-	<p>Soon I'll have this app working</p>
+	<h1 class='text-center'>All posts</h1>
+	<p class='text-center'>Here are all the posts...</p>
+	<br>
+	<% @allPosts.each do |post| %>
+		<h2>Title: <%= post.title %></h2>
+		<p>Content: <%= post.content %></p>
+		<a href='/posts/<%= post.id %>'>View Post</a> |
+		<a href='/posts/delete/<%= post.id %>'>Delete</a> |
+		<a href='/posts/<%= post.id %>/edit'>Edit</a>
+		<hr>
+	<% end %>
 </div>
 

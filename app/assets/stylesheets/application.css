@@ -13,3 +13,20 @@
  *= require_tree .
  *= require_self
  */
+
+ /*http://coolors.co/app/ed6a5a-f4f1bb-9bc1bc-5ca4a9-e6ebe0*/
+
+.navbar-default {
+	background-color: #ED6A5A;
+	border: 0px;
+	border-radius: 0px;
+	border-bottom: 1px solid #999;
+}
+.navbar-default .navbar-nav>li>a {
+	color: white;
+}
+
+.navbar-default .navbar-brand {
+    color: white;
+    font-size: 20px;
+}

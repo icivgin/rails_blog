@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
-  root "posts#index"
+  root "site#index"
 
-  resources :posts, only: [:new, :create, :show]
+  get 'posts/delete/:id', to: "posts#destroy"
+
+  resources :posts, except: [:destroy]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
