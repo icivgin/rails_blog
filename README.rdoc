@@ -1,3 +1,3 @@
-== README
+== Rails Blog
 
 This is a simple blog app, built with ruby and rails. It includes authentication and authorization. The public can view all posts made.
